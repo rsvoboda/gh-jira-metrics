@@ -1,0 +1,51 @@
+version: "3.1"
+
+networks:
+  frontend:
+  backend:
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.17.1
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - ./prometheus_data/:/prometheus/
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=1y'
+    ports:
+      - 9090:9090
+    links:
+      - gh_metrics:gh_metrics
+    networks:
+      - backend
+
+  grafana:
+    image: grafana/grafana:6.7.2
+    depends_on:
+      - prometheus
+    ports:
+      - 3000:3000
+    volumes:
+      - ./grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=foobar
+      - GF_USERS_ALLOW_SIGN_UP=true
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+    networks:
+      - backend
+      - frontend
+ 
+  gh_metrics:
+    image: rostasvo/gh-exporter:1.0-SNAPSHOT 
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    environment:
+      - GH_REPOS=quarkusio/quarkus, quarkusio/quarkus-quickstarts, quarkusio/quarkusio.github.io
+      - GH_TOKEN=__TODO__
+    networks:
+      - backend
