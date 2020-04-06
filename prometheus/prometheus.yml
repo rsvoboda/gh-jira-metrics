@@ -1,7 +1,8 @@
 # my global config
 global:
-  scrape_interval:     60s
-  evaluation_interval: 60s
+  scrape_interval:     120s
+  scrape_timeout:      20s
+  evaluation_interval: 120m
 
 # Alertmanager configuration
 alerting:
@@ -15,22 +16,23 @@ rule_files:
   # - "first_rules.yml"
   # - "second_rules.yml"
 
-# A scrape configuration containing exactly one endpoint to scrape:
-# Here it's Prometheus itself.
 scrape_configs:
-  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: 'prometheus'
-
-    # metrics_path defaults to '/metrics'
-    # scheme defaults to 'http'.
-
+    scrape_interval: 5m
     static_configs:
     - targets: ['localhost:9090']
 
-  - job_name: 'gh_metrics'
-
-    # Override the global default and scrape targets from this job every 5 seconds.
-    # scrape_interval: 5s
-
+  - job_name: 'gh_metrics_verb'
+    scrape_interval: 5m
     static_configs:
-         - targets: ['gh_metrics:8080']
+         - targets: ['gh_metrics_verb:8080']
+
+  - job_name: 'gh_metrics_adv'
+    scrape_interval: 12m
+    static_configs:
+         - targets: ['gh_metrics_adv:8080']
+
+  - job_name: 'gh_metrics_base'
+    scrape_interval: 30m
+    static_configs:
+         - targets: ['gh_metrics_base:8080']

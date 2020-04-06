@@ -80,7 +80,7 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 3,
+      "pointradius": 1,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [
@@ -187,7 +187,7 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 3,
+      "pointradius": 1,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
@@ -196,7 +196,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_open_issues{repo=\"quarkusio/quarkus\"}",
+          "expr": "gh_repo_open_issues{repo=\"quarkusio/quarkus\",label!~\"kind.*\"}",
           "format": "time_series",
           "instant": false,
           "interval": "5m",
@@ -289,7 +289,7 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 3,
+      "pointradius": 1,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
@@ -388,7 +388,7 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 3,
+      "pointradius": 1,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [
@@ -495,7 +495,7 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 3,
+      "pointradius": 1,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
@@ -595,7 +595,7 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 3,
+      "pointradius": 1,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
@@ -691,7 +691,7 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 3,
+      "pointradius": 1,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [
@@ -790,7 +790,7 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 3,
+      "pointradius": 1,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
@@ -884,7 +884,7 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 3,
+      "pointradius": 1,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
