@@ -7,6 +7,7 @@ networks:
 services:
   prometheus:
     image: prom/prometheus:v2.17.1
+    user: root
     volumes:
       - ./prometheus/:/etc/prometheus/
       - ./prometheus_data/:/prometheus/
@@ -25,6 +26,7 @@ services:
 
   grafana:
     image: grafana/grafana:6.7.2
+    user: root
     depends_on:
       - prometheus
     ports:
