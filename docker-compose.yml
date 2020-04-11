@@ -43,7 +43,7 @@ services:
       - frontend
  
   gh_metrics_verb:
-    image: rostasvo/gh-exporter:1.0-SNAPSHOT 
+    image: rostasvo/gh-exporter:1.0.0.Final
     expose:
       - 8080
     ports:
@@ -56,7 +56,7 @@ services:
       - backend
 
   gh_metrics_adv:
-    image: rostasvo/gh-exporter:1.0-SNAPSHOT
+    image: rostasvo/gh-exporter:1.0.0.Final
     expose:
       - 8080
     ports:
@@ -69,7 +69,7 @@ services:
       - backend
 
   gh_metrics_base:
-    image: rostasvo/gh-exporter:1.0-SNAPSHOT
+    image: rostasvo/gh-exporter:1.0.0.Final
     expose:
       - 8080
     ports:
