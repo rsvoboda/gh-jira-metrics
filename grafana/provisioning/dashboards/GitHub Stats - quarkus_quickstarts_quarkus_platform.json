@@ -16,7 +16,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
   "links": [],
   "panels": [
     {
@@ -25,6 +24,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
+      "decimals": 0,
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -60,9 +60,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_open_issues{repo=\"quarkusio/quarkus\",label=~\"kind.*\"}",
+          "expr": "gh_repo_open_issues{repo=\"quarkusio/quarkus-quickstarts\"} or gh_repo_open_issues{repo=\"quarkusio/quarkus-platform\"}",
           "interval": "",
-          "legendFormat": "{{label}}",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -110,7 +110,10 @@
       }
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "quarkusio/quarkus-quickstarts": "green",
+        "quarkusio/quarkus-platform": "yellow"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -150,9 +153,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_closed_issues{repo=\"quarkusio/quarkus\",label=~\"kind.*\"}",
+          "expr": "gh_repo_closed_issues{repo=\"quarkusio/quarkus-quickstarts\"} or gh_repo_closed_issues{repo=\"quarkusio/quarkus-platform\"}",
           "interval": "",
-          "legendFormat": "{{label}}",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -205,6 +208,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
+      "decimals": 0,
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -215,6 +219,7 @@
       },
       "hiddenSeries": false,
       "id": 4,
+      "interval": "",
       "legend": {
         "avg": false,
         "current": true,
@@ -240,9 +245,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_open_prs{repo=\"quarkusio/quarkus\"}",
+          "expr": "gh_repo_open_prs{repo=\"quarkusio/quarkus-quickstarts\"} or gh_repo_open_prs{repo=\"quarkusio/quarkus-platform\"}",
           "interval": "",
-          "legendFormat": "{{label}}",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -331,15 +336,15 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_closed_prs{repo=\"quarkusio/quarkus\",label!~\"kind.*\"}  ",
+          "expr": "gh_repo_closed_prs{repo=\"quarkusio/quarkus-quickstarts\"} or gh_repo_closed_prs{repo=\"quarkusio/quarkus-platform\"}",
           "interval": "",
-          "legendFormat": "Closed ",
+          "legendFormat": "Closed {{repo}}",
           "refId": "A"
         },
         {
-          "expr": "gh_repo_merged_prs{repo=\"quarkusio/quarkus\",label!~\"kind.*\"}  ",
+          "expr": "gh_repo_merged_prs{repo=\"quarkusio/quarkus-quickstarts\"} or gh_repo_merged_prs{repo=\"quarkusio/quarkus-platform\"}",
           "interval": "",
-          "legendFormat": "Merged",
+          "legendFormat": "Merged {{repo}}",
           "refId": "B"
         }
       ],
@@ -428,9 +433,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_commits{repo=\"quarkusio/quarkus\"}",
+          "expr": "gh_repo_commits{repo=\"quarkusio/quarkus-quickstarts\"} or gh_repo_commits{repo=\"quarkusio/quarkus-platform\"}",
           "interval": "",
-          "legendFormat": "Commits",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -479,7 +484,11 @@
       }
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "Contributors": "yellow",
+        "quarkusio/quarkus-quickstarts": "purple",
+        "quarkusio/quarkus-platform": "semi-dark-red"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -520,9 +529,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_contributors{repo=\"quarkusio/quarkus\"}",
+          "expr": "gh_repo_contributors{repo=\"quarkusio/quarkus-quickstarts\"} or gh_repo_contributors{repo=\"quarkusio/quarkus-platform\"}",
           "interval": "",
-          "legendFormat": "Contributors",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -571,7 +580,11 @@
       }
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "Tags": "red",
+        "quarkusio/quarkus-quickstarts": "green",
+        "quarkusio/quarkus-platform": "yellow"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -612,9 +625,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_tags{repo=\"quarkusio/quarkus\"}",
+          "expr": "gh_repo_tags{repo=\"quarkusio/quarkus-quickstarts\"} or gh_repo_tags{repo=\"quarkusio/quarkus-platform\"}",
           "interval": "",
-          "legendFormat": "Tags",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -663,7 +676,10 @@
       }
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "Forks": "blue",
+        "quarkusio/quarkus-quickstarts": "green"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -704,9 +720,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_forks{repo=\"quarkusio/quarkus\"}",
+          "expr": "gh_repo_forks{repo=\"quarkusio/quarkus-quickstarts\"} or gh_repo_forks{repo=\"quarkusio/quarkus-platform\"}",
           "interval": "",
-          "legendFormat": "Forks",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -755,7 +771,11 @@
       }
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "Stars": "orange",
+        "quarkusio/quarkus-quickstarts": "blue",
+        "quarkusio/quarkus-platform": "orange"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -796,9 +816,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_stars{repo=\"quarkusio/quarkus\"}",
+          "expr": "gh_repo_stars{repo=\"quarkusio/quarkus-quickstarts\"} or gh_repo_stars{repo=\"quarkusio/quarkus-platform\"}",
           "interval": "",
-          "legendFormat": "Stars",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -847,7 +867,11 @@
       }
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "Subscribers / Watchers": "purple",
+        "quarkusio/quarkus-quickstarts": "green",
+        "quarkusio/quarkus-platform": "yellow"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -888,9 +912,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_subscribers{repo=\"quarkusio/quarkus\"}",
+          "expr": "gh_repo_subscribers{repo=\"quarkusio/quarkus-quickstarts\"} or gh_repo_subscribers{repo=\"quarkusio/quarkus-platform\"}",
           "interval": "",
-          "legendFormat": "Subscribers / Watchers",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -939,7 +963,11 @@
       }
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "Size (kB)": "super-light-red",
+        "quarkusio/quarkus-quickstarts": "blue",
+        "quarkusio/quarkus-platform": "orange"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -980,9 +1008,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_size{repo=\"quarkusio/quarkus\"}",
+          "expr": "gh_repo_size{repo=\"quarkusio/quarkus-quickstarts\"} or gh_repo_size{repo=\"quarkusio/quarkus-platform\"}",
           "interval": "",
-          "legendFormat": "Size (kB)",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -1031,6 +1059,7 @@
       }
     }
   ],
+  "refresh": false,
   "schemaVersion": 22,
   "style": "dark",
   "tags": [],
@@ -1038,7 +1067,7 @@
     "list": []
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {
@@ -1056,10 +1085,10 @@
     ]
   },
   "timezone": "browser",
-  "title": "GitHub Stats - quarkusio/quarkus",
-  "uid": "quarkusio_quarkus",
+  "title": "Quarkus - Quickstarts and Platform",
+  "uid": "quarkusio_quarkus_qs_platform",
   "variables": {
     "list": []
   },
-  "version": 3
+  "version": 2
 }

@@ -1,28 +1,8 @@
 {
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "6.7.0"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph",
-      "version": ""
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    }
-  ],
   "annotations": {
     "list": [
       {
-        "$$hashKey": "object:90",
+        "$$hashKey": "object:82",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -33,448 +13,25 @@
       }
     ]
   },
-  "description": "A docker stack to collect GitHub statistics",
   "editable": true,
-  "gnetId": 1559,
+  "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
   "links": [],
   "panels": [
     {
-      "aliasColors": {
-        "stars": "#E5A8E2"
-      },
+      "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
-      "decimals": 3,
-      "editable": true,
-      "error": false,
+      "decimals": 0,
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 7,
-        "w": 8,
+        "h": 9,
+        "w": 12,
         "x": 0,
         "y": 0
-      },
-      "hiddenSeries": false,
-      "id": 4,
-      "legend": {
-        "avg": false,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:162",
-          "alias": "stars",
-          "yaxis": 1
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "gh_repo_stars{repo=\"quarkusio/quarkus\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{stars}}",
-          "metric": "gh_repo_stars",
-          "refId": "A",
-          "step": 600
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Quarkus Stars",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:175",
-          "format": "short",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:176",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {
-        "Docker Open Issues": "#C15C17",
-        "Open Issues": "#BF1B00"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "decimals": -1,
-      "editable": true,
-      "error": false,
-      "fill": 3,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 8,
-        "y": 0
-      },
-      "hiddenSeries": false,
-      "id": 5,
-      "legend": {
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "gh_repo_open_issues{repo=\"quarkusio/quarkus\",label!~\"kind.*\"}",
-          "format": "time_series",
-          "instant": false,
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{Open Issues}}",
-          "metric": "gh_repo_open_issues",
-          "refId": "A",
-          "step": 600
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Quarkus Open Issues",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:745",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:746",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": 1
-      }
-    },
-    {
-      "aliasColors": {
-        "Forks": "#F9BA8F"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "decimals": 3,
-      "editable": true,
-      "error": false,
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 16,
-        "y": 0
-      },
-      "hiddenSeries": false,
-      "id": 6,
-      "legend": {
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "gh_repo_forks{repo=\"quarkusio/quarkus\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{Forks}}",
-          "metric": "gh_repo_forks",
-          "refId": "A",
-          "step": 600
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Quarkus Forks",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:247",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:248",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {
-        "stars": "#1F78C1"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "editable": true,
-      "error": false,
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 0,
-        "y": 7
-      },
-      "hiddenSeries": false,
-      "id": 1,
-      "legend": {
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:471",
-          "alias": "stars",
-          "yaxis": 1
-        }
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "gh_repo_stars{repo=\"quarkusio/quarkus-quickstarts\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{stars}}",
-          "metric": "gh_repo_stars",
-          "refId": "A",
-          "step": 600
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Quarkus Quickstarts Stars",
-      "tooltip": {
-        "msResolution": false,
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:484",
-          "format": "short",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:485",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {
-        "Docker Open Issues": "#C15C17",
-        "Open Issues": "#C15C17"
-      },
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "decimals": null,
-      "editable": true,
-      "error": false,
-      "fill": 4,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 8,
-        "y": 7
       },
       "hiddenSeries": false,
       "id": 2,
@@ -489,14 +46,13 @@
       },
       "lines": true,
       "linewidth": 1,
-      "links": [],
       "nullPointMode": "connected",
       "options": {
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 1,
-      "points": true,
+      "pointradius": 0.5,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -504,22 +60,18 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_open_issues{repo=\"quarkusio/quarkus-quickstarts\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{Open Issues}}",
-          "metric": "gh_repo_open_issues",
-          "refId": "A",
-          "step": 600
+          "expr": "gh_repo_open_issues{repo=\"quarkusio/quarkusio.github.io\"} or gh_repo_open_issues{repo=\"quarkusio/code.quarkus.io\"}",
+          "interval": "",
+          "legendFormat": "{{repo}}",
+          "refId": "A"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Quarkus Quickstarts Open Issues",
+      "title": "Open Issues",
       "tooltip": {
-        "msResolution": false,
         "shared": true,
         "sort": 0,
         "value_type": "individual"
@@ -534,7 +86,7 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:395",
+          "$$hashKey": "object:191",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -543,7 +95,7 @@
           "show": true
         },
         {
-          "$$hashKey": "object:396",
+          "$$hashKey": "object:192",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -559,22 +111,20 @@
     },
     {
       "aliasColors": {
-        "Forks": "#F9BA8F"
+        "quarkusio/quarkusio.github.io": "green",
+        "quarkusio/code.quarkus.io": "yellow"
       },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
-      "decimals": null,
-      "editable": true,
-      "error": false,
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 7,
-        "w": 8,
-        "x": 16,
-        "y": 7
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 0
       },
       "hiddenSeries": false,
       "id": 3,
@@ -589,14 +139,13 @@
       },
       "lines": true,
       "linewidth": 1,
-      "links": [],
       "nullPointMode": "connected",
       "options": {
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 1,
-      "points": true,
+      "pointradius": 0.5,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -604,22 +153,18 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_forks{repo=\"quarkusio/quarkus-quickstarts\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{Forks}}",
-          "metric": "gh_repo_forks",
-          "refId": "A",
-          "step": 600
+          "expr": "gh_repo_closed_issues{repo=\"quarkusio/quarkusio.github.io\"} or gh_repo_closed_issues{repo=\"quarkusio/code.quarkus.io\"}",
+          "interval": "",
+          "legendFormat": "{{repo}}",
+          "refId": "A"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Quarkus Quickstarts Forks",
+      "title": "Closed Issues",
       "tooltip": {
-        "msResolution": false,
         "shared": true,
         "sort": 0,
         "value_type": "individual"
@@ -634,7 +179,7 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:467",
+          "$$hashKey": "object:191",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -643,7 +188,288 @@
           "show": true
         },
         {
-          "$$hashKey": "object:468",
+          "$$hashKey": "object:192",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "decimals": 0,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 4,
+      "interval": "",
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 0.5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "gh_repo_open_prs{repo=\"quarkusio/quarkusio.github.io\"} or gh_repo_open_prs{repo=\"quarkusio/code.quarkus.io\"}",
+          "interval": "",
+          "legendFormat": "{{repo}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Open PRs",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:191",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:192",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 6,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 0.5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "gh_repo_closed_prs{repo=\"quarkusio/quarkusio.github.io\"} or gh_repo_closed_prs{repo=\"quarkusio/code.quarkus.io\"}",
+          "interval": "",
+          "legendFormat": "Closed {{repo}}",
+          "refId": "A"
+        },
+        {
+          "expr": "gh_repo_merged_prs{repo=\"quarkusio/quarkusio.github.io\"} or gh_repo_merged_prs{repo=\"quarkusio/code.quarkus.io\"}",
+          "interval": "",
+          "legendFormat": "Merged {{repo}}",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Closed / Merged PRs",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:191",
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:192",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "decimals": 0,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 0,
+        "y": 18
+      },
+      "hiddenSeries": false,
+      "id": 7,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 0.5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "gh_repo_commits{repo=\"quarkusio/quarkusio.github.io\"} or gh_repo_commits{repo=\"quarkusio/code.quarkus.io\"}",
+          "interval": "",
+          "legendFormat": "{{repo}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Commits",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:191",
+          "decimals": null,
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:192",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -659,19 +485,22 @@
     },
     {
       "aliasColors": {
-        "stars": "super-light-yellow"
+        "Contributors": "yellow",
+        "quarkusio/quarkusio.github.io": "purple",
+        "quarkusio/code.quarkus.io": "semi-dark-red"
       },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
+      "decimals": 0,
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 8,
-        "x": 0,
-        "y": 14
+        "x": 8,
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 8,
@@ -691,25 +520,18 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 1,
-      "points": true,
+      "pointradius": 0.5,
+      "points": false,
       "renderer": "flot",
-      "seriesOverrides": [
-        {
-          "$$hashKey": "object:116",
-          "alias": "stars",
-          "yaxis": 1
-        }
-      ],
+      "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_stars{repo=\"quarkusio/quarkusio.github.io\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{stars}}",
+          "expr": "gh_repo_contributors{repo=\"quarkusio/quarkusio.github.io\"} or gh_repo_contributors{repo=\"quarkusio/code.quarkus.io\"}",
+          "interval": "",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -717,7 +539,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Quarkus Site Stars",
+      "title": "Contributors",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -733,8 +555,9 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:169",
-          "format": "short",
+          "$$hashKey": "object:191",
+          "decimals": null,
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -742,7 +565,7 @@
           "show": true
         },
         {
-          "$$hashKey": "object:170",
+          "$$hashKey": "object:192",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -758,22 +581,25 @@
     },
     {
       "aliasColors": {
-        "Open Issues": "light-yellow"
+        "Tags": "red",
+        "quarkusio/quarkusio.github.io": "green",
+        "quarkusio/code.quarkus.io": "yellow"
       },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
-      "fill": 4,
+      "decimals": 0,
+      "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 8,
-        "x": 8,
-        "y": 14
+        "x": 16,
+        "y": 18
       },
       "hiddenSeries": false,
-      "id": 10,
+      "id": 9,
       "legend": {
         "avg": false,
         "current": true,
@@ -790,8 +616,8 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 1,
-      "points": true,
+      "pointradius": 0.5,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -799,11 +625,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_open_issues{repo=\"quarkusio/quarkusio.github.io\"}",
-          "format": "time_series",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{Open Issues}}",
+          "expr": "gh_repo_tags{repo=\"quarkusio/quarkusio.github.io\"} or gh_repo_tags{repo=\"quarkusio/code.quarkus.io\"}",
+          "interval": "",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -811,7 +635,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Quarkus Site Open Issues",
+      "title": "Tags",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -827,8 +651,9 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:325",
-          "format": "short",
+          "$$hashKey": "object:191",
+          "decimals": null,
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -836,7 +661,7 @@
           "show": true
         },
         {
-          "$$hashKey": "object:326",
+          "$$hashKey": "object:192",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -852,19 +677,117 @@
     },
     {
       "aliasColors": {
-        "Forks": "semi-dark-orange"
+        "Forks": "blue",
+        "quarkusio/quarkusio.github.io": "green"
       },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
+      "decimals": 0,
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 14
+        "h": 9,
+        "w": 6,
+        "x": 0,
+        "y": 27
+      },
+      "hiddenSeries": false,
+      "id": 11,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 0.5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "gh_repo_forks{repo=\"quarkusio/quarkusio.github.io\"} or gh_repo_forks{repo=\"quarkusio/code.quarkus.io\"}",
+          "interval": "",
+          "legendFormat": "{{repo}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Forks",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:191",
+          "decimals": null,
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:192",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "Stars": "orange",
+        "quarkusio/quarkusio.github.io": "blue",
+        "quarkusio/code.quarkus.io": "orange"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "decimals": 0,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 6,
+        "y": 27
       },
       "hiddenSeries": false,
       "id": 12,
@@ -884,8 +807,8 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 1,
-      "points": true,
+      "pointradius": 0.5,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -893,10 +816,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_forks{repo=\"quarkusio/quarkusio.github.io\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{Forks}}",
+          "expr": "gh_repo_stars{repo=\"quarkusio/quarkusio.github.io\"} or gh_repo_stars{repo=\"quarkusio/code.quarkus.io\"}",
+          "interval": "",
+          "legendFormat": "{{repo}}",
           "refId": "A"
         }
       ],
@@ -904,7 +826,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Quarkus Site Forks",
+      "title": "Stars",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -920,8 +842,9 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:631",
-          "format": "short",
+          "$$hashKey": "object:191",
+          "decimals": null,
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -929,7 +852,7 @@
           "show": true
         },
         {
-          "$$hashKey": "object:632",
+          "$$hashKey": "object:192",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -944,18 +867,119 @@
       }
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "Subscribers / Watchers": "purple",
+        "quarkusio/quarkusio.github.io": "green",
+        "quarkusio/code.quarkus.io": "yellow"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
+      "decimals": 0,
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 22
+        "h": 9,
+        "w": 6,
+        "x": 12,
+        "y": 27
+      },
+      "hiddenSeries": false,
+      "id": 13,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 0.5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "gh_repo_subscribers{repo=\"quarkusio/quarkusio.github.io\"} or gh_repo_subscribers{repo=\"quarkusio/code.quarkus.io\"}",
+          "interval": "",
+          "legendFormat": "{{repo}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Subscribers / Watchers",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:191",
+          "decimals": null,
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:192",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "Size (kB)": "super-light-red",
+        "quarkusio/quarkusio.github.io": "blue",
+        "quarkusio/code.quarkus.io": "orange"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "decimals": 0,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 18,
+        "y": 27
       },
       "hiddenSeries": false,
       "id": 14,
@@ -975,8 +999,8 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 2,
-      "points": true,
+      "pointradius": 0.5,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -984,32 +1008,17 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_size{repo=\"quarkusio/quarkusio.github.io\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{quarkusio.github.io}}",
+          "expr": "gh_repo_size{repo=\"quarkusio/quarkusio.github.io\"} or gh_repo_size{repo=\"quarkusio/code.quarkus.io\"}",
+          "interval": "",
+          "legendFormat": "{{repo}}",
           "refId": "A"
-        },
-        {
-          "expr": "gh_repo_size{repo=\"quarkusio/quarkus\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{quarkus}}",
-          "refId": "B"
-        },
-        {
-          "expr": "gh_repo_size{repo=\"quarkusio/quarkus-quickstarts\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{quarkus-quickstarts}}",
-          "refId": "C"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Repo size (kB)",
+      "title": "Size (kB)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1025,8 +1034,9 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:824",
-          "format": "short",
+          "$$hashKey": "object:191",
+          "decimals": null,
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -1034,112 +1044,7 @@
           "show": true
         },
         {
-          "$$hashKey": "object:825",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "prometheus",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 22
-      },
-      "hiddenSeries": false,
-      "id": 16,
-      "legend": {
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "connected",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 2,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "gh_repo_subscribers{repo=\"quarkusio/quarkusio.github.io\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{quarkusio.github.io}}",
-          "refId": "A"
-        },
-        {
-          "expr": "gh_repo_subscribers{repo=\"quarkusio/quarkus\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{quarkus}}",
-          "refId": "B"
-        },
-        {
-          "expr": "gh_repo_subscribers{repo=\"quarkusio/quarkus-quickstarts\"}",
-          "interval": "5m",
-          "intervalFactor": 2,
-          "legendFormat": "{{quarkus-quickstarts}}",
-          "refId": "C"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Repo watchers",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:913",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:914",
+          "$$hashKey": "object:192",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1154,6 +1059,7 @@
       }
     }
   ],
+  "refresh": false,
   "schemaVersion": 22,
   "style": "dark",
   "tags": [],
@@ -1176,24 +1082,13 @@
       "1h",
       "2h",
       "1d"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
     ]
   },
   "timezone": "browser",
-  "title": "Quarkus - Overview",
-  "uid": "quarkusio_overview",
+  "title": "Quarkus - Quarkus.io and code.quarkus.io",
+  "uid": "quarkusio_quarkus_quarkusio_code",
   "variables": {
     "list": []
   },
-  "version": 10
+  "version": 2
 }
