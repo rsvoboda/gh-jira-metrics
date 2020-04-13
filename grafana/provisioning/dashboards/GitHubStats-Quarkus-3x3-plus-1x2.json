@@ -22,7 +22,6 @@
   "annotations": {
     "list": [
       {
-        "$$hashKey": "object:90",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -37,7 +36,7 @@
   "editable": true,
   "gnetId": 1559,
   "graphTooltip": 0,
-  "id": null,
+  "id": 15,
   "links": [],
   "panels": [
     {
@@ -81,11 +80,10 @@
       },
       "percentage": false,
       "pointradius": 1,
-      "points": true,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "$$hashKey": "object:162",
           "alias": "stars",
           "yaxis": 1
         }
@@ -125,7 +123,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:175",
           "format": "short",
           "label": "",
           "logBase": 1,
@@ -134,7 +131,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:176",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -188,7 +184,7 @@
       },
       "percentage": false,
       "pointradius": 1,
-      "points": true,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -228,7 +224,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:745",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -237,7 +232,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:746",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -259,7 +253,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
-      "decimals": 3,
+      "decimals": 0,
       "editable": true,
       "error": false,
       "fill": 1,
@@ -290,7 +284,7 @@
       },
       "percentage": false,
       "pointradius": 1,
-      "points": true,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -328,7 +322,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:247",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -337,7 +330,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:248",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -359,6 +351,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
+      "decimals": 0,
       "editable": true,
       "error": false,
       "fill": 1,
@@ -389,11 +382,10 @@
       },
       "percentage": false,
       "pointradius": 1,
-      "points": true,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "$$hashKey": "object:471",
           "alias": "stars",
           "yaxis": 1
         }
@@ -433,7 +425,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:484",
           "format": "short",
           "label": "",
           "logBase": 1,
@@ -442,7 +433,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:485",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -465,7 +455,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
-      "decimals": null,
+      "decimals": 0,
       "editable": true,
       "error": false,
       "fill": 4,
@@ -496,7 +486,7 @@
       },
       "percentage": false,
       "pointradius": 1,
-      "points": true,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -534,7 +524,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:395",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -543,7 +532,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:396",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -565,7 +553,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
-      "decimals": null,
+      "decimals": 0,
       "editable": true,
       "error": false,
       "fill": 1,
@@ -596,7 +584,7 @@
       },
       "percentage": false,
       "pointradius": 1,
-      "points": true,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -634,7 +622,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:467",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -643,7 +630,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:468",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -665,6 +651,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
+      "decimals": 0,
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -692,11 +679,10 @@
       },
       "percentage": false,
       "pointradius": 1,
-      "points": true,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "$$hashKey": "object:116",
           "alias": "stars",
           "yaxis": 1
         }
@@ -733,7 +719,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:169",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -742,7 +727,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:170",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -764,6 +748,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
+      "decimals": 0,
       "fill": 4,
       "fillGradient": 0,
       "gridPos": {
@@ -791,7 +776,7 @@
       },
       "percentage": false,
       "pointradius": 1,
-      "points": true,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -827,7 +812,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:325",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -836,7 +820,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:326",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -885,7 +868,7 @@
       },
       "percentage": false,
       "pointradius": 1,
-      "points": true,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -920,7 +903,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:631",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -929,7 +911,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:632",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -949,6 +930,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "prometheus",
+      "decimals": null,
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -975,8 +957,8 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 2,
-      "points": true,
+      "pointradius": 1,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -1025,7 +1007,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:824",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1034,7 +1015,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:825",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1080,8 +1060,8 @@
         "dataLinks": []
       },
       "percentage": false,
-      "pointradius": 2,
-      "points": true,
+      "pointradius": 1,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -1130,7 +1110,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:913",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1139,7 +1118,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:914",
           "format": "short",
           "label": null,
           "logBase": 1,
