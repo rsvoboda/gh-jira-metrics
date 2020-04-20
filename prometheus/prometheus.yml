@@ -36,3 +36,8 @@ scrape_configs:
     scrape_interval: 30m
     static_configs:
          - targets: ['gh_metrics_base:8080']
+
+  - job_name: 'jira_metrics'
+    scrape_interval: 12m
+    static_configs:
+         - targets: ['jira_metrics:8080']

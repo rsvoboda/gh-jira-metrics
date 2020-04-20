@@ -21,6 +21,7 @@ services:
       - gh_metrics_verb:gh_metrics_verb
       - gh_metrics_adv:gh_metrics_adv
       - gh_metrics_base:gh_metrics_base
+      - jira_metrics:jira_metrics
     networks:
       - backend
 
@@ -78,5 +79,18 @@ services:
       - GH_REPOS=quarkusio/quarkus-http,quarkusio/quarkus-workshops,quarkusio/quarkus-images,quarkusio/quarkus-security,quarkusio/quarkus-grpc
       - GH_DETAILS_LEVEL=BASE
       - GH_TOKEN=__TOKEN_2_TODO__
+    networks:
+      - backend
+
+  jira_metrics:
+    image: rostasvo/jira-exporter:1.0.0.Final-SNAPSHOT
+    expose:
+      - 8080
+    ports:
+      - 8380:8080
+    environment:
+      - JIRA_PROJECTS=QUARKUS
+      - JIRA_AUTH_USERNAME=__USERNAME_TODO__
+      - JIRA_AUTH_PASSWORD=__PASSWORD_TODO__
     networks:
       - backend
