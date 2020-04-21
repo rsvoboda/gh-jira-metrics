@@ -12,6 +12,9 @@ There are 3 levels of details provided by this exporter, details about provided 
 
 In the current setup only the main Quarkus repo is exposed in verbose mode, the main reason for this is GitHub restrictions on the number of requests for Search API.
 
+JIRA metrics exporter is located here: https://github.com/rsvoboda/jira-exporter.
+At this stage, this exporter provides so-called release readiness metrics that track Blocker and Critical issues, documentation issues, regressions and issues for triage.
+
 ## Screenshots
 ![Quarkus dashboard example](images/01.png)
 ![Quarkus dashboard example](images/02.png)
