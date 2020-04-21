@@ -83,7 +83,7 @@ services:
       - backend
 
   jira_metrics:
-    image: rostasvo/jira-exporter:1.0.0.Final-SNAPSHOT
+    image: rostasvo/jira-exporter:1.0.0.Final
     expose:
       - 8080
     ports:
