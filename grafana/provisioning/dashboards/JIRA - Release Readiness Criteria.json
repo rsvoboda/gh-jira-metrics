@@ -1,0 +1,498 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "$$hashKey": "object:372",
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 16,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "decimals": 0,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 2,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": [
+          {
+            "targetBlank": true,
+            "title": "Blockers",
+            "url": "https://issues.redhat.com/issues/?jql=project%20%3D%20QUARKUS%20and%20priority%20%3D%20Blocker%20and%20resolution%20%3D%20Unresolved%20"
+          },
+          {
+            "targetBlank": true,
+            "title": "Criticals",
+            "url": "https://issues.redhat.com/issues/?jql=project%20%3D%20QUARKUS%20and%20priority%20%3D%20Critical%20and%20resolution%20%3D%20Unresolved%20"
+          }
+        ]
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "jira_open_blocker",
+          "interval": "",
+          "legendFormat": "{{repo}} - Blocker issues",
+          "refId": "A"
+        },
+        {
+          "expr": "jira_open_critical",
+          "interval": "",
+          "legendFormat": "{{repo}} - Critical issues",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Open Blocker and Critical Issues",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:427",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:428",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "decimals": 0,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 3,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": [
+          {
+            "targetBlank": true,
+            "title": "Blockers",
+            "url": "https://issues.redhat.com/issues/?jql=project%20%3D%20QUARKUS%20AND%20priority%20%3D%20Blocker%20AND%20resolution%20%3D%20Done%20AND%20status%20in%20(Closed%2C%20Verified)"
+          },
+          {
+            "targetBlank": true,
+            "title": "Criticals",
+            "url": "https://issues.redhat.com/issues/?jql=project%20%3D%20QUARKUS%20AND%20priority%20%3D%20Critical%20AND%20resolution%20%3D%20Done%20AND%20status%20in%20(Closed%2C%20Verified)"
+          }
+        ]
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "jira_verified_blocker",
+          "interval": "",
+          "legendFormat": "{{repo}} - Blocker issues",
+          "refId": "A"
+        },
+        {
+          "expr": "jira_verified_critical",
+          "interval": "",
+          "legendFormat": "{{repo}} - Critical issues",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Verified Blocker and Critical Issues",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:427",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:428",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "decimals": 0,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 4,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": [
+          {
+            "targetBlank": true,
+            "title": "Regressions",
+            "url": "https://issues.redhat.com/issues/?jql=project%20%3D%20QUARKUS%20and%20labels%20%3D%20regression%20and%20resolution%20%3D%20unresolved%20"
+          },
+          {
+            "targetBlank": true,
+            "title": "Regressions - Perf",
+            "url": "https://issues.redhat.com/issues/?jql=project%20%3D%20QUARKUS%20and%20labels%20%3D%20performance%20and%20labels%20%3D%20regression%20and%20resolution%20%3D%20unresolved"
+          },
+          {
+            "title": "Regressions - HA",
+            "url": "https://issues.redhat.com/issues/?jql=project%20%3D%20QUARKUS%20and%20labels%20%3D%20ha%20and%20labels%20%3D%20regression%20and%20resolution%20%3D%20unresolved"
+          }
+        ]
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "jira_open_regression",
+          "interval": "",
+          "legendFormat": "{{repo}} - Regressions",
+          "refId": "A"
+        },
+        {
+          "expr": "jira_open_regression_performance",
+          "interval": "",
+          "legendFormat": "{{repo}} - Regressions - Perf",
+          "refId": "B"
+        },
+        {
+          "expr": "jira_open_regression_ha",
+          "interval": "",
+          "legendFormat": "{{repo}} - Regressions - HA",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Open Regression Issues",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:427",
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:428",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "decimals": 0,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 5,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": [
+          {
+            "targetBlank": true,
+            "title": "Documentation Issues",
+            "url": "https://issues.redhat.com/issues/?jql=project%20%3D%20QUARKUS%20and%20type%20%3D%20Bug%20and%20resolution%20%3D%20Unresolved%20AND%20(fixVersion%20%3D%20EMPTY%20OR%20fixVersion%20!%3D%201.3.0.NEXT)%20AND%20component%20%3D%20Documentation"
+          },
+          {
+            "targetBlank": true,
+            "title": "Untriaged  Issues",
+            "url": "https://issues.redhat.com/issues/?jql=project%20%3D%20QUARKUS%20and%20labels%20%3D%20performance%20and%20labels%20%3D%20regression%20and%20resolution%20%3D%20unresolved"
+          }
+        ]
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "jira_open_documentation",
+          "interval": "",
+          "legendFormat": "{{repo}} - Documentation",
+          "refId": "A"
+        },
+        {
+          "expr": "jira_open_untriaged",
+          "interval": "",
+          "legendFormat": "{{repo}} - Untriaged",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Documentation and Untriaged Issues",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:427",
+          "decimals": null,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:428",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "schemaVersion": 22,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-7d",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Release Readiness Criteria",
+  "uid": "release-readiness-criteria",
+  "variables": {
+    "list": []
+  },
+  "version": 3
+}
