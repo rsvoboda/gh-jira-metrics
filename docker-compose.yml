@@ -21,6 +21,7 @@ services:
       - gh_metrics_verb:gh_metrics_verb
       - gh_metrics_adv:gh_metrics_adv
       - gh_metrics_base:gh_metrics_base
+      - gh_metrics_cust:gh_metrics_cust
       - jira_metrics:jira_metrics
     networks:
       - backend
@@ -44,7 +45,7 @@ services:
       - frontend
  
   gh_metrics_verb:
-    image: rostasvo/gh-exporter:1.0.0.Final
+    image: rostasvo/gh-exporter:1.1.0.Final
     expose:
       - 8080
     ports:
@@ -57,7 +58,7 @@ services:
       - backend
 
   gh_metrics_adv:
-    image: rostasvo/gh-exporter:1.0.0.Final
+    image: rostasvo/gh-exporter:1.1.0.Final
     expose:
       - 8080
     ports:
@@ -70,7 +71,7 @@ services:
       - backend
 
   gh_metrics_base:
-    image: rostasvo/gh-exporter:1.0.0.Final
+    image: rostasvo/gh-exporter:1.1.0.Final
     expose:
       - 8080
     ports:
@@ -79,6 +80,21 @@ services:
       - GH_REPOS=quarkusio/quarkus-http,quarkusio/quarkus-workshops,quarkusio/quarkus-images,quarkusio/quarkus-security,quarkusio/quarkus-grpc
       - GH_DETAILS_LEVEL=BASE
       - GH_TOKEN=__TOKEN_2_TODO__
+    networks:
+      - backend
+
+  gh_metrics_cust:
+    image: rostasvo/gh-exporter:1.1.0.Final
+    expose:
+      - 8080
+    ports:
+      - 8480:8080
+    environment:
+      - GH_REPOS=quarkusio/quarkus
+      - GH_DETAILS_LEVEL=CUSTOM
+      - GH_TOKEN=__TOKEN_1_TODO__
+      - GH_OPEN_ISSUES=label:priority/blocker
+      - GH_CLOSED_ISSUES=label:priority/blocker,label:kind/bug+-label:triage/invalid+-label:triage/duplicate,label:kind/enhancement+-label:triage/invalid+-label:triage/duplicate
     networks:
       - backend
 
