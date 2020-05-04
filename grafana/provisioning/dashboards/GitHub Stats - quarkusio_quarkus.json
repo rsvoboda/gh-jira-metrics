@@ -16,7 +16,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
   "links": [],
   "panels": [
     {
@@ -36,16 +35,19 @@
       "hiddenSeries": false,
       "id": 2,
       "legend": {
+        "alignAsTable": false,
         "avg": false,
         "current": true,
         "max": false,
         "min": false,
+        "rightSide": false,
         "show": true,
         "total": false,
         "values": true
       },
       "lines": true,
       "linewidth": 1,
+      "links": [],
       "nullPointMode": "connected",
       "options": {
         "dataLinks": []
@@ -70,7 +72,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Open Issues",
+      "title": "GitHub Issues - Open",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -87,8 +89,9 @@
       "yaxes": [
         {
           "$$hashKey": "object:191",
-          "format": "short",
-          "label": null,
+          "decimals": null,
+          "format": "none",
+          "label": "",
           "logBase": 1,
           "max": null,
           "min": null,
@@ -97,7 +100,7 @@
         {
           "$$hashKey": "object:192",
           "format": "short",
-          "label": null,
+          "label": "",
           "logBase": 1,
           "max": null,
           "min": null,
@@ -154,13 +157,19 @@
           "interval": "",
           "legendFormat": "{{label}}",
           "refId": "A"
+        },
+        {
+          "expr": "gh_repo_closed_issues{repo=\"quarkusio/quarkus\",label=~\"triage.*\"}",
+          "interval": "",
+          "legendFormat": "{{label}}",
+          "refId": "B"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Closed Issues",
+      "title": "GitHub Issues - Closed",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -177,7 +186,7 @@
       "yaxes": [
         {
           "$$hashKey": "object:191",
-          "format": "short",
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -212,6 +221,201 @@
         "w": 12,
         "x": 0,
         "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 17,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 0.5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "gh_repo_open_issues{label=~\"label:.*\"}",
+          "interval": "",
+          "legendFormat": "Open {{label}}",
+          "refId": "B"
+        },
+        {
+          "expr": "gh_repo_closed_issues{label=~\"label:.*\"}",
+          "interval": "",
+          "legendFormat": "Closed {{label}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "GitHub Issues - Custom queries",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:191",
+          "decimals": null,
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:192",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "decimals": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 18,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 0.5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "gh_repo_closed_issues{label=\"kind/bug\"} OR gh_repo_closed_issues{label=\"kind/enhancement\"}",
+          "interval": "",
+          "legendFormat": "Closed {{label}}",
+          "refId": "B"
+        },
+        {
+          "expr": "gh_repo_closed_issues{label=~\"label:kind.*\"}",
+          "interval": "",
+          "legendFormat": "Closed {{label}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "GitHub Issues - Drilldown - kind/bug  kind/enhancement",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:191",
+          "decimals": null,
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:192",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "prometheus",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 4,
@@ -251,7 +455,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Open PRs",
+      "title": "GitHub PRs - Open",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -268,11 +472,12 @@
       "yaxes": [
         {
           "$$hashKey": "object:191",
-          "format": "short",
+          "decimals": null,
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -302,7 +507,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 9
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 6,
@@ -332,9 +537,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "gh_repo_closed_prs{repo=\"quarkusio/quarkus\",label!~\"kind.*\"}  ",
+          "expr": "gh_repo_closed_prs{repo=\"quarkusio/quarkus\",label!~\"kind.*\"} and gh_repo_closed_prs{repo=\"quarkusio/quarkus\",label!~\"triage.*\"} ",
           "interval": "",
-          "legendFormat": "Closed ",
+          "legendFormat": "Closed",
           "refId": "A"
         },
         {
@@ -342,13 +547,19 @@
           "interval": "",
           "legendFormat": "Merged",
           "refId": "B"
+        },
+        {
+          "expr": "gh_repo_closed_prs{repo=\"quarkusio/quarkus\",label=~\"triage.*\"} ",
+          "interval": "",
+          "legendFormat": "{{label}}",
+          "refId": "C"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Closed / Merged PRs",
+      "title": "GitHub PRs - Closed / Merged",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -365,7 +576,7 @@
       "yaxes": [
         {
           "$$hashKey": "object:191",
-          "format": "short",
+          "format": "none",
           "label": "",
           "logBase": 1,
           "max": null,
@@ -403,7 +614,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 27
       },
       "hiddenSeries": false,
       "id": 15,
@@ -449,7 +660,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Last 24h - Issues",
+      "title": "GitHub Issues - Last 24h",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -507,7 +718,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 18
+        "y": 27
       },
       "hiddenSeries": false,
       "id": 16,
@@ -559,7 +770,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Last 24h - PRs",
+      "title": "GitHub PRs - Last 24h",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -613,7 +824,7 @@
         "h": 9,
         "w": 8,
         "x": 0,
-        "y": 27
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 7,
@@ -652,7 +863,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Commits",
+      "title": "GitHub Repository Commits",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -707,7 +918,7 @@
         "h": 9,
         "w": 8,
         "x": 8,
-        "y": 27
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 8,
@@ -746,7 +957,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Contributors",
+      "title": "GitHub Repository Contributors",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -801,7 +1012,7 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 27
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 9,
@@ -840,7 +1051,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Tags",
+      "title": "GitHub Repository Tags",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -895,7 +1106,7 @@
         "h": 9,
         "w": 6,
         "x": 0,
-        "y": 36
+        "y": 45
       },
       "hiddenSeries": false,
       "id": 11,
@@ -934,7 +1145,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Forks",
+      "title": "GitHub Repository Forks",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -989,7 +1200,7 @@
         "h": 9,
         "w": 6,
         "x": 6,
-        "y": 36
+        "y": 45
       },
       "hiddenSeries": false,
       "id": 12,
@@ -1028,7 +1239,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Stars",
+      "title": "GitHub Repository Stars",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1083,7 +1294,7 @@
         "h": 9,
         "w": 6,
         "x": 12,
-        "y": 36
+        "y": 45
       },
       "hiddenSeries": false,
       "id": 13,
@@ -1122,7 +1333,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Subscribers / Watchers",
+      "title": "GitHub Repository Subscribers",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1177,7 +1388,7 @@
         "h": 9,
         "w": 6,
         "x": 18,
-        "y": 36
+        "y": 45
       },
       "hiddenSeries": false,
       "id": 14,
@@ -1216,7 +1427,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Size (kB)",
+      "title": "GitHub Repository Size (kB)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1235,7 +1446,7 @@
           "$$hashKey": "object:191",
           "decimals": null,
           "format": "none",
-          "label": null,
+          "label": "",
           "logBase": 1,
           "max": null,
           "min": null,
