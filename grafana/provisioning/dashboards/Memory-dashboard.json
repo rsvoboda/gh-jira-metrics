@@ -70,7 +70,7 @@
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "Used heap bytes - {{job}}",
+          "legendFormat": "Heap - {{job}}",
           "refId": "A"
         }
       ],
@@ -128,7 +128,7 @@
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "Used heap bytes - {{job}}",
+          "legendFormat": "Heap - {{job}}",
           "refId": "A"
         }
       ],
