@@ -24,8 +24,8 @@
       "description": "",
       "gridPos": {
         "h": 8,
-        "w": 18,
-        "x": 2,
+        "w": 24,
+        "x": 0,
         "y": 0
       },
       "id": 4,
@@ -204,5 +204,5 @@
   "variables": {
     "list": []
   },
-  "version": 1
+  "version": 3
 }
