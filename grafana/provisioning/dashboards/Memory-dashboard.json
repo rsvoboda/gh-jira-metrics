@@ -80,7 +80,10 @@
       "type": "gauge"
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "Heap - gh_metrics_adv": "purple",
+        "Heap - gh_metrics_verb": "green"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -100,12 +103,12 @@
       "legend": {
         "alignAsTable": false,
         "avg": false,
-        "current": false,
+        "current": true,
         "max": false,
         "min": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
