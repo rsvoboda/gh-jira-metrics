@@ -2,7 +2,7 @@ version: "3.1"
 
 networks:
   frontend:
-  backend:
+  backend2:
 
 services:
   prometheus:
@@ -14,7 +14,7 @@ services:
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
-      - '--storage.tsdb.retention.time=1y'
+      - '--storage.tsdb.retention.time=2y'
     ports:
       - 9090:9090
     links:
@@ -24,7 +24,7 @@ services:
       - gh_metrics_cust:gh_metrics_cust
       - jira_metrics:jira_metrics
     networks:
-      - backend
+      - backend2
 
   grafana:
     image: grafana/grafana:6.7.2
@@ -41,7 +41,7 @@ services:
       - GF_USERS_ALLOW_SIGN_UP=true
       - GF_AUTH_ANONYMOUS_ENABLED=true
     networks:
-      - backend
+      - backend2
       - frontend
  
   gh_metrics_verb:
@@ -55,7 +55,7 @@ services:
       - GH_DETAILS_LEVEL=VERBOSE
       - GH_TOKEN=__TOKEN_1_TODO__
     networks:
-      - backend
+      - backend2
 
   gh_metrics_adv:
     image: rostasvo/gh-exporter:1.1.3.Final
@@ -68,7 +68,7 @@ services:
       - GH_DETAILS_LEVEL=ADVANCED
       - GH_TOKEN=__TOKEN_2_TODO__
     networks:
-      - backend
+      - backend2
 
   gh_metrics_base:
     image: rostasvo/gh-exporter:1.1.3.Final
@@ -77,11 +77,11 @@ services:
     ports:
       - 8280:8080
     environment:
-      - GH_REPOS=quarkusio/quarkus-http,quarkusio/quarkus-workshops,quarkusio/quarkus-images,quarkusio/quarkus-security,quarkusio/quarkus-grpc
+      - GH_REPOS=quarkusio/quarkus-http,quarkusio/quarkus-workshops,quarkusio/quarkus-images,quarkusio/quarkus-security
       - GH_DETAILS_LEVEL=BASE
       - GH_TOKEN=__TOKEN_2_TODO__
     networks:
-      - backend
+      - backend2
 
   gh_metrics_cust:
     image: rostasvo/gh-exporter:1.1.3.Final
@@ -96,7 +96,7 @@ services:
       - GH_OPEN_ISSUES=label:priority/blocker
       - GH_CLOSED_ISSUES=label:priority/blocker,label:kind/bug+-label:triage/invalid+-label:triage/duplicate,label:kind/enhancement+-label:triage/invalid+-label:triage/duplicate
     networks:
-      - backend
+      - backend2
 
   jira_metrics:
     image: rostasvo/jira-exporter:1.0.1.Final
@@ -109,4 +109,4 @@ services:
       - JIRA_AUTH_USERNAME=__USERNAME_TODO__
       - JIRA_AUTH_PASSWORD=__PASSWORD_TODO__
     networks:
-      - backend
+      - backend2
