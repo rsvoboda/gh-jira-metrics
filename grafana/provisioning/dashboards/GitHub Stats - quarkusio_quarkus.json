@@ -19,7 +19,14 @@
   "links": [],
   "panels": [
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "Open Issues": "light-purple",
+        "kind/bug": "light-green",
+        "kind/enhancement": "light-orange",
+        "kind/epic": "light-blue",
+        "kind/extension-proposal": "light-orange",
+        "kind/question": "light-red"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -61,6 +68,12 @@
       "stack": false,
       "steppedLine": false,
       "targets": [
+        {
+          "expr": "gh_repo_open_issues{repo=\"quarkusio/quarkus\",label=\"\"}",
+          "interval": "",
+          "legendFormat": "Open Issues",
+          "refId": "B"
+        },
         {
           "expr": "gh_repo_open_issues{repo=\"quarkusio/quarkus\",label=~\"kind.*\"}",
           "interval": "",
@@ -1499,5 +1512,5 @@
   "variables": {
     "list": []
   },
-  "version": 1
+  "version": 2
 }
