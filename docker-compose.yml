@@ -6,7 +6,7 @@ networks:
 
 services:
   prometheus:
-    image: prom/prometheus:v2.17.1
+    image: prom/prometheus:v2.24.1
     user: root
     volumes:
       - ./prometheus/:/etc/prometheus/
@@ -14,7 +14,7 @@ services:
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
-      - '--storage.tsdb.retention.time=2y'
+      - '--storage.tsdb.retention.time=3y'
     ports:
       - 9090:9090
     links:
@@ -27,7 +27,7 @@ services:
       - backend2
 
   grafana:
-    image: grafana/grafana:6.7.2
+    image: grafana/grafana:7.3.7
     user: root
     depends_on:
       - prometheus
@@ -45,7 +45,7 @@ services:
       - frontend
  
   gh_metrics_verb:
-    image: rostasvo/gh-exporter:1.1.4.Final
+    image: rostasvo/gh-exporter:1.1.5.Final
     expose:
       - 8080
     ports:
@@ -58,7 +58,7 @@ services:
       - backend2
 
   gh_metrics_adv:
-    image: rostasvo/gh-exporter:1.1.4.Final
+    image: rostasvo/gh-exporter:1.1.5.Final
     expose:
       - 8080
     ports:
@@ -71,7 +71,7 @@ services:
       - backend2
 
   gh_metrics_base:
-    image: rostasvo/gh-exporter:1.1.4.Final
+    image: rostasvo/gh-exporter:1.1.5.Final
     expose:
       - 8080
     ports:
@@ -84,7 +84,7 @@ services:
       - backend2
 
   gh_metrics_cust:
-    image: rostasvo/gh-exporter:1.1.4.Final
+    image: rostasvo/gh-exporter:1.1.5.Final
     expose:
       - 8080
     ports:
@@ -99,7 +99,7 @@ services:
       - backend2
 
   jira_metrics:
-    image: rostasvo/jira-exporter:1.0.2.Final
+    image: rostasvo/jira-exporter:1.0.3.Final
     expose:
       - 8080
     ports:
