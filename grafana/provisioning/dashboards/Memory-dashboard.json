@@ -16,12 +16,36 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 18,
   "links": [],
   "panels": [
     {
       "datasource": "prometheus",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 120000000
+              },
+              {
+                "color": "red",
+                "value": 200000000
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 8,
         "w": 24,
@@ -30,47 +54,26 @@
       },
       "id": 4,
       "options": {
-        "fieldOptions": {
+        "orientation": "auto",
+        "reduceOptions": {
           "calcs": [
             "lastNotNull"
           ],
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 120000000
-                },
-                {
-                  "color": "red",
-                  "value": 200000000
-                }
-              ]
-            },
-            "unit": "bytes"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "auto",
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "6.7.2",
+      "pluginVersion": "7.3.7",
       "targets": [
         {
-          "expr": "base_memory_usedHeap_bytes",
+          "expr": "base_memory_usedHeap_bytes OR process_resident_memory_bytes",
           "format": "time_series",
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "Heap - {{job}}",
+          "legendFormat": "{{job}}",
           "refId": "A"
         }
       ],
@@ -89,6 +92,13 @@
       "dashes": false,
       "datasource": "prometheus",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -114,9 +124,10 @@
       "linewidth": 1,
       "nullPointMode": "connected",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.3.7",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -126,12 +137,12 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "base_memory_usedHeap_bytes",
+          "expr": "base_memory_usedHeap_bytes OR process_resident_memory_bytes",
           "format": "time_series",
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "Heap - {{job}}",
+          "legendFormat": "{{job}}",
           "refId": "A"
         }
       ],
@@ -177,7 +188,7 @@
       }
     }
   ],
-  "schemaVersion": 22,
+  "schemaVersion": 26,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -204,8 +215,5 @@
   "timezone": "",
   "title": "Memory dashboard",
   "uid": "memory_dashboard",
-  "variables": {
-    "list": []
-  },
-  "version": 3
+  "version": 5
 }
