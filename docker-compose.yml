@@ -110,3 +110,16 @@ services:
       - JIRA_AUTH_PASSWORD=__PASSWORD_TODO__
     networks:
       - backend2
+
+  github-actions-exporter:
+    image: rostasvo/github-actions-exporter:1.5.2.Final
+    expose:
+      - 9999
+    ports:
+      - 9999:9999
+    environment:
+      - GITHUB_REFRESH=55
+      - GITHUB_TOKEN=__TOKEN_3_TODO__
+      - GITHUB_REPOS=quarkusio/quarkus,quarkusio/quarkus-quickstarts,quarkusio/quarkusio.github.io,quarkusio/code.quarkus.io,quarkusio/quarkus-platform,quarkusio/quarkus-ecosystem-ci
+    networks:
+      - backend2
