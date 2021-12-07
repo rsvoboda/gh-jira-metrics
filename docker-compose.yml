@@ -99,14 +99,13 @@ services:
       - backend2
 
   jira_metrics:
-    image: rostasvo/jira-exporter:1.0.10.Final
+    image: rostasvo/jira-exporter:1.1.0.Final
     expose:
       - 8080
     ports:
       - 8380:8080
     environment:
       - JIRA_PROJECTS=QUARKUS
-      - JIRA_AUTH_USERNAME=__USERNAME_TODO__
-      - JIRA_AUTH_PASSWORD=__PASSWORD_TODO__
+      - JIRA_AUTH_TOKEN=__TOKEN_TODO__
     networks:
       - backend2
