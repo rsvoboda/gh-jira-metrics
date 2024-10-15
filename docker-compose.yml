@@ -99,7 +99,7 @@ services:
       - backend2
 
   jira_metrics:
-    image: rostasvo/jira-exporter:1.1.16.Final
+    image: rostasvo/jira-exporter:1.1.17.Final
     expose:
       - 8080
     ports:
